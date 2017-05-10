@@ -11,12 +11,12 @@ config lime system
 
 config lime network
         option primary_interface eth0
-        option main_ipv4_address '10.%N1.0.0/16'
-        option main_ipv6_address '2a00:1508:0a%N1:%N200::/64'
+        option main_ipv4_address '10.42.0.0/16'
+        option main_ipv6_address '2a00:1508:0a42:2400::/64'
         list protocols adhoc
         list protocols lan
         list protocols anygw
-        list protocols batadv:%N1
+        list protocols batadv:42
         list protocols bmx6:13
         list protocols olsr:14
         list protocols olsr6:15
@@ -33,14 +33,14 @@ config lime wifi
         list modes 'ap'
         list modes 'apname'
         list modes 'adhoc'
-        option ap_ssid '{{NETWORK_NAME}}'
-        option apname_ssid '{{NETWORK_NAME}} | %H'
-        option adhoc_ssid '{{NETWORK_NAME}} | 1144-W2PA-LIME-XXXX'
+        option ap_ssid 'openNET.io'
+        option apname_ssid 'openNET.io | %H'
+        option adhoc_ssid 'openNET.io | 1144-W2PA-LIME-XXXX'
         option adhoc_bssid '16:27:F6:27:57:14'
         option adhoc_mcast_rate_2ghz '24000'
         option adhoc_mcast_rate_5ghz '6000'
         option ieee80211s_mesh_fwding '0'
-        option ieee80211s_mesh_id '{{NETWORK_NAME}} | 1144-81SX-LIME-XXXX'
+        option ieee80211s_mesh_id 'openNET.io | 1144-81SX-LIME-XXXX'
         option ap_encryption 'psk2+ccmp'
         option ap_key 'Aurora42+'
         option apname_encryption 'psk2+ccmp'
