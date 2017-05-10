@@ -1,0 +1,14 @@
+#!/bin/sh
+
+sshkeys="
+{{SSH_KEYS}}
+"
+ 
+authkeys="/etc/dropbear/authorized_keys"
+umask 077 ; mkdir -p $(dirname $authkeys) ; touch $authkeys
+IFS="
+"    
+for key in $sshkeys ; do
+  sed "\|^$key$|d" -i $authkeys
+  echo   "$key"    >> $authkeys
+done                           
