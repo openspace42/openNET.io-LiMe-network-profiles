@@ -1,5 +1,0 @@
-config lime system
-        option hostname 'OPNT-ND3N-%M4%M5%M6'
-
-config lime wifi
-        option ap_disabled '1'
